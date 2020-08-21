@@ -6,7 +6,7 @@
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
-            <li><a href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('home-page')}}">Home</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">Features</a></li>
         </ul><!-- main-menu -->
