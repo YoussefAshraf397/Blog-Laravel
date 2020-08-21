@@ -37,16 +37,23 @@
 
             @if(request()->is('admin/*'))
                 <li class="{{request()->is('admin/dashboard' ) ? 'active' : ''}}">
-                    <a href="/admin/dashboard">
+                    <a href="{{route('admin.dashboard')}}">
                         <i class="material-icons">dashboard</i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="{{request()->is('admin/tag' ) ? 'active' : ''}}">
+                    <a href="{{route('admin.tag.index')}}">
+                        <i class="material-icons">label</i>
+                        <span>Tags</span>
                     </a>
                 </li>
             @endif
 
             @if(request()->is('editor/*'))
                 <li class="{{request()->is('editor/dashboard' ) ? 'active' : ''}}">
-                    <a href="/editor/dashboard">
+                    <a href="{{route('editor.dashboard')}}">
                         <i class="material-icons">dashboard</i>
                         <span>Dashboard</span>
                     </a>

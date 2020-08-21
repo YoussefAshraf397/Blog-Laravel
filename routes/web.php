@@ -21,11 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::group(['as' => 'admin' ,'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['auth' , 'admin']], function (){
+Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['auth' , 'admin']], function (){
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
+
+    Route::resource('tag' , 'TagController');
 });
 
-Route::group(['as' => 'editor' ,'prefix' => 'editor' , 'namespace' => 'Editor' , 'middleware' => ['auth' , 'editor']], function (){
+Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' , 'middleware' => ['auth' , 'editor']], function (){
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
 });
 
