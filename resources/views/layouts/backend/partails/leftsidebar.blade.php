@@ -12,11 +12,19 @@
                 <ul class="dropdown-menu pull-right">
                     <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                    <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                    <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+
                     <li role="separator" class="divider"></li>
-                    <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            <i class="material-icons">input</i>Sign Out
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -26,11 +34,26 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
-                <a href="/admin/dashboard">
-                    <i class="material-icons">home</i>
-                    <span>Home</span>
-                </a>
+
+            @if(request()->is('admin/*'))
+                <li class="{{request()->is('admin/dashboard' ) ? 'active' : ''}}">
+                    <a href="/admin/dashboard">
+                        <i class="material-icons">dashboard</i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            @endif
+
+            @if(request()->is('editor/*'))
+                <li class="{{request()->is('editor/dashboard' ) ? 'active' : ''}}">
+                    <a href="/editor/dashboard">
+                        <i class="material-icons">dashboard</i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            @endif
+
+
         </ul>
     </div>
     <!-- #Menu -->

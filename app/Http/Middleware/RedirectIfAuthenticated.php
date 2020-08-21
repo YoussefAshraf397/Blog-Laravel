@@ -18,10 +18,10 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard('web')->check() && Auth::user()->role->id == '1') {
-            return redirect()->route('admin.dashboard');
-        } elseif (Auth::guard('web')->check() && Auth::user()->role->id == '2') {
-            return redirect()->route('editor.dashboard');
+        if (Auth::guard($guard)->check() && Auth::user()->role->id == '1') {
+            return redirect('admin/dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role->id == '2') {
+            return redirect('/editor/dashboard');
         }
             return $next($request);
     }
