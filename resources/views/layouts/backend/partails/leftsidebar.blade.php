@@ -2,10 +2,11 @@
     <!-- User Info -->
     <div class="user-info">
         <div class="image">
-            <img src="{{asset('assets/backend/images/user.png')}}" width="48" height="48" alt="User" />
+            <img src="{{asset('assets/backend/images/user.png')}}" width="48" height="48" alt="User"/>
         </div>
         <div class="info-container">
-            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</div>
+            <div class="name" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">{{auth()->user()->name}}</div>
             <div class="email">{{auth()->user()->email}}</div>
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
@@ -47,6 +48,13 @@
                     <a href="{{route('admin.tag.index')}}">
                         <i class="material-icons">label</i>
                         <span>Tags</span>
+                    </a>
+                </li>
+
+                <li class="{{request()->is('admin/tag' ) ? 'active' : ''}}">
+                    <a href="{{route('admin.category.index')}}">
+                        <i class="material-icons">apps</i>
+                        <span>Categories</span>
                     </a>
                 </li>
             @endif

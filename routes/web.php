@@ -25,6 +25,9 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
 
     Route::resource('tag' , 'TagController');
+
+    Route::resource('category' , 'CategoryController');
+
 });
 
 Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' , 'middleware' => ['auth' , 'editor']], function (){
