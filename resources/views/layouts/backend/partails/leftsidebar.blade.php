@@ -71,6 +71,13 @@
                         <span>Pending Posts</span>
                     </a>
                 </li>
+
+                <li class="{{ Request::is('admin/subscriber') ? 'active' : '' }}">
+                    <a href="{{ route('admin.subscriber.index') }}">
+                        <i class="material-icons">subscriptions</i>
+                        <span>Subscribers</span>
+                    </a>
+                </li>
             @endif
 
             @if(request()->is('editor/*'))
