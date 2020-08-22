@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index')->name('home-page');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home-page');
 
 Route::post('subscriber','SubscriberController@store')->name('subscriber.store');
 
