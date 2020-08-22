@@ -33,7 +33,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    {{--                                    <th>Post Count</th>--}}
+                                    <th>Post Count</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
                                     <th>Action</th>
@@ -45,7 +45,7 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $category->name }}</td>
-                                        {{--                                        <td>{{ $category->posts->count() }}</td>--}}
+                                        <td>{{ $category->posts->count() }}</td>
                                         <td>{{ $category->created_at }}</td>
                                         <td>{{ $category->updated_at }}</td>
                                         <td class="text-center">

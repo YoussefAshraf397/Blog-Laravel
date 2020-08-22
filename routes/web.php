@@ -28,9 +28,16 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
 
     Route::resource('category' , 'CategoryController');
 
+    Route::resource('post' , 'PostController');
+    Route::get('/pending/post','PostController@pending')->name('post.pending');
+    Route::put('/post/{id}/approve','PostController@approval')->name('post.approve');
+
+
 });
 
 Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' , 'middleware' => ['auth' , 'editor']], function (){
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
+
+    Route::resource('post' , 'PostController');
 });
 

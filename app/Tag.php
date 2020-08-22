@@ -9,4 +9,9 @@ class Tag extends Model
 {
     use SoftDeletes;
 
+    public function posts()
+    {
+        return $this->belongsToMany('App\Post')->withTimestamps();
+    }
+
 }

@@ -51,10 +51,24 @@
                     </a>
                 </li>
 
-                <li class="{{request()->is('admin/tag' ) ? 'active' : ''}}">
+                <li class="{{request()->is('admin/category' ) ? 'active' : ''}}">
                     <a href="{{route('admin.category.index')}}">
                         <i class="material-icons">apps</i>
                         <span>Categories</span>
+                    </a>
+                </li>
+
+                <li class="{{request()->is('admin/post' ) ? 'active' : ''}}">
+                    <a href="{{route('admin.post.index')}}">
+                        <i class="material-icons">library_books</i>
+                        <span>Posts</span>
+                    </a>
+                </li>
+
+                <li class="{{request()->is('admin/pending/posts' ) ? 'active' : ''}}">
+                    <a href="{{route('admin.post.pending')}}">
+                        <i class="material-icons">library_books</i>
+                        <span>Pending Posts</span>
                     </a>
                 </li>
             @endif
@@ -64,6 +78,13 @@
                     <a href="{{route('editor.dashboard')}}">
                         <i class="material-icons">dashboard</i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="{{request()->is('editor/post' ) ? 'active' : ''}}">
+                    <a href="{{route('editor.post.index')}}">
+                        <i class="material-icons">library_books</i>
+                        <span>Posts</span>
                     </a>
                 </li>
             @endif
