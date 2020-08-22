@@ -79,7 +79,7 @@ class CategoryController extends Controller
         $category->slug = $slug;
         $category->image = $imagename;
         $category->save();
-        toastr()->success('Category has been deleted successfully!');
+        toastr()->success('Category has been Created successfully!');
         return redirect()->route('admin.category.index');
     }
 

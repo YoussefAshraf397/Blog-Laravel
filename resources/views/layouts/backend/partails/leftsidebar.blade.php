@@ -72,10 +72,17 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('admin/subscriber') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/subscriber') ? 'active' : '' }}">
                     <a href="{{ route('admin.subscriber.index') }}">
                         <i class="material-icons">subscriptions</i>
                         <span>Subscribers</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('admin/favorite') ? 'active' : '' }}">
+                    <a href="{{ route('admin.favorite.index') }}">
+                        <i class="material-icons">favorite</i>
+                        <span>Favorite Posts</span>
                     </a>
                 </li>
 
@@ -113,6 +120,13 @@
                     <a href="{{route('editor.post.index')}}">
                         <i class="material-icons">library_books</i>
                         <span>Posts</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('editor/favorite') ? 'active' : '' }}">
+                    <a href="{{ route('editor.favorite.index') }}">
+                        <i class="material-icons">favorite</i>
+                        <span>Favorite Posts</span>
                     </a>
                 </li>
 
