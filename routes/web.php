@@ -36,6 +36,10 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::get('/subscriber','SubscriberController@index')->name('subscriber.index');
     Route::delete('/subscriber/{subscriber}','SubscriberController@destroy')->name('subscriber.destroy');
 
+    Route::get('settings','SettingController@index')->name('settings');
+    Route::put('profile-update','SettingController@updateProfile')->name('profile.update');
+    Route::put('password-update','SettingController@updatePassword')->name('password.update');
+
 
 });
 
@@ -43,5 +47,9 @@ Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' 
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
 
     Route::resource('post' , 'PostController');
+
+    Route::get('settings','SettingController@index')->name('settings');
+    Route::put('profile-update','SettingController@updateProfile')->name('profile.update');
+    Route::put('password-update','SettingController@updatePassword')->name('password.update');
 });
 
