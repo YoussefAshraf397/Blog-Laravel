@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Notifications\EditorPostApproved;
 use App\Post;
 use App\Tag;
 use Carbon\Carbon;
@@ -199,8 +200,9 @@ class PostController extends Controller
         {
             $post->is_approved = true;
             $post->save();
-//            $post->user->notify(new AuthorPostApproved($post));
-//
+
+            $post->user->notify(new EditorPostApproved($post));
+
 //            $subscribers = Subscriber::all();
 //            foreach ($subscribers as $subscriber)
 //            {
