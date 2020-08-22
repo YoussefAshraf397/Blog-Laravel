@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Notifications\EditorPostApproved;
+use App\Notifications\NewPostNotify;
 use App\Post;
+use App\Subscriber;
 use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -90,12 +93,12 @@ class PostController extends Controller
         $post->categories()->attach($request->categories);
         $post->tags()->attach($request->tags);
 
-//        $subscribers = Subscriber::all();
-//        foreach ($subscribers as $subscriber)
-//        {
-//            Notification::route('mail',$subscriber->email)
-//                ->notify(new NewPostNotify($post));
-//        }
+        $subscribers = Subscriber::all();
+        foreach ($subscribers as $subscriber)
+        {
+            Notification::route('mail',$subscriber->email)
+                ->notify(new NewPostNotify($post));
+        }
 
         toastr()->success('Post has been Saved successfully!');
 
@@ -203,12 +206,12 @@ class PostController extends Controller
 
             $post->user->notify(new EditorPostApproved($post));
 
-//            $subscribers = Subscriber::all();
-//            foreach ($subscribers as $subscriber)
-//            {
-//                Notification::route('mail',$subscriber->email)
-//                    ->notify(new NewPostNotify($post));
-//            }
+            $subscribers = Subscriber::all();
+            foreach ($subscribers as $subscriber)
+            {
+                Notification::route('mail',$subscriber->email)
+                    ->notify(new NewPostNotify($post));
+            }
 
             toastr()->success('Post has been Approved successfully!');
         } else {
