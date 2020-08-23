@@ -26,6 +26,9 @@ Route::get('/search','SearchController@search')->name('search');
 
 Route::post('subscriber','SubscriberController@store')->name('subscriber.store');
 
+Route::get('profile/{username}','EditorController@profile')->name('editor.profile');
+
+
 
 Auth::routes();
 

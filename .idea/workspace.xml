@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,21 +170,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/frontend/css/profile" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/post" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/frontend/css/profile" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/public/assets/frontend/css/category" />
       <recent name="$PROJECT_DIR$/resources/views/editor" />
       <recent name="$PROJECT_DIR$/resources/views/layouts/backend" />
-      <recent name="$PROJECT_DIR$/public/assets/frontend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/post" />
     </key>
   </component>
   <component name="RunManager">
@@ -203,7 +205,7 @@
       <workItem from="1597970026440" duration="2615000" />
       <workItem from="1598018120967" duration="43144000" />
       <workItem from="1598106135109" duration="27352000" />
-      <workItem from="1598170720549" duration="971000" />
+      <workItem from="1598170720549" duration="3700000" />
     </task>
     <servers />
   </component>
@@ -251,10 +253,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1598114903491" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598172328322">
+    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog" timestamp="1598177990799">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598172328322" />
+    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177990799" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598177999769">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177999769" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
