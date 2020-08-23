@@ -75,3 +75,8 @@ Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' 
 
 });
 
+View::composer('layouts.frontend.partial.footer',function ($view) {
+    $categories = App\Category::all();
+    $view->with('categories',$categories);
+});
+
