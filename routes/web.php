@@ -26,6 +26,9 @@ Route::get('/search','SearchController@search')->name('search');
 
 Route::post('subscriber','SubscriberController@store')->name('subscriber.store');
 
+Route::get('profile/{username}','EditorController@profile')->name('editor.profile');
+
+
 
 Auth::routes();
 
@@ -57,6 +60,9 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
 
     Route::get('comments','CommentController@index')->name('comment.index');
     Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
+
+    Route::get('editors','EditorController@index')->name('editor.index');
+    Route::delete('editor/{id}','EditorController@destroy')->name('editor.destroy');
 
 
 

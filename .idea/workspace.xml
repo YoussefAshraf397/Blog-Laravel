@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend/partails/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend/partails/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,21 +170,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/frontend/css/profile" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/post" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/frontend/css/profile" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/public/assets/frontend/css/category" />
       <recent name="$PROJECT_DIR$/resources/views/editor" />
       <recent name="$PROJECT_DIR$/resources/views/layouts/backend" />
-      <recent name="$PROJECT_DIR$/public/assets/frontend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/post" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,7 +204,8 @@
       <workItem from="1597942514853" duration="126000" />
       <workItem from="1597970026440" duration="2615000" />
       <workItem from="1598018120967" duration="43144000" />
-      <workItem from="1598106135109" duration="24035000" />
+      <workItem from="1598106135109" duration="27352000" />
+      <workItem from="1598170720549" duration="5124000" />
     </task>
     <servers />
   </component>
@@ -226,6 +229,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598114776709" />
+    <state x="697" y="354" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598148063843">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="697" y="354" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1598148063843" />
     <state x="625" y="140" width="726" height="825" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598117841968">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -246,10 +253,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1598114903491" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598145184651">
+    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog" timestamp="1598177990799">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598145184651" />
+    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177990799" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598177999769">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177999769" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
