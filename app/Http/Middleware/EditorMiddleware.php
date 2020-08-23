@@ -19,5 +19,6 @@ class EditorMiddleware
         if(Auth::check() && Auth::user()->role->id == '2') {
             return $next($request);
         }
-        return redirect()->route('login');    }
+        return redirect()->route('login');
+    }
 }
