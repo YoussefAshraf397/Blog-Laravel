@@ -23,6 +23,6 @@ class RedirectIfAuthenticated
         } elseif (Auth::guard($guard)->check() && Auth::user()->role->id == '2') {
             return redirect()->route('editor.dashboard');
         }
-        return $next($request);
+            return $next($request);
     }
 }
