@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend/partails/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend/partails/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +202,8 @@
       <workItem from="1597942514853" duration="126000" />
       <workItem from="1597970026440" duration="2615000" />
       <workItem from="1598018120967" duration="43144000" />
-      <workItem from="1598106135109" duration="24035000" />
+      <workItem from="1598106135109" duration="27352000" />
+      <workItem from="1598170720549" duration="971000" />
     </task>
     <servers />
   </component>
@@ -226,6 +227,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598114776709" />
+    <state x="697" y="354" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598148063843">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="697" y="354" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1598148063843" />
     <state x="625" y="140" width="726" height="825" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598117841968">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -246,10 +251,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1598114903491" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598145184651">
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598172328322">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598145184651" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598172328322" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

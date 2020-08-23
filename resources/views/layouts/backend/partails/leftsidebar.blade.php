@@ -86,10 +86,17 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('admin/comments') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/comments') ? 'active' : '' }}">
                     <a href="{{ route('admin.comment.index') }}">
                         <i class="material-icons">comment</i>
                         <span>Comments</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('admin/editors') ? 'active' : '' }}">
+                    <a href="{{ route('admin.editor.index') }}">
+                        <i class="material-icons">account_circle</i>
+                        <span>Editors</span>
                     </a>
                 </li>
 

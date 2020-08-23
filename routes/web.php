@@ -58,6 +58,9 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::get('comments','CommentController@index')->name('comment.index');
     Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
 
+    Route::get('editors','EditorController@index')->name('editor.index');
+    Route::delete('editor/{id}','EditorController@destroy')->name('editor.destroy');
+
 
 
 });
