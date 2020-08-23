@@ -8,7 +8,7 @@
 
                     <a class="logo" href="#"><img src="images/logo.png" alt="Logo Image"></a>
                     <p class="copyright">{{config('app.name')}} @ 2020. All rights reserved.</p>
-                    <p class="copyright">Designed by <a href="" target="_blank">Youssef Ashraf Awad</a></p>
+                    <p class="copyright">Designed by <a href="https://www.linkedin.com/in/youssef-ashraf-93b20a15b/" >Youssef Ashraf Awad</a></p>
                     <ul class="icons">
                         <li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
                         <li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
