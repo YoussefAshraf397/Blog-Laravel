@@ -21,6 +21,9 @@ Route::get('/category/{slug}','PostController@postByCategory')->name('category.p
 Route::get('/tag/{slug}','PostController@postByTag')->name('tag.posts');
 
 
+Route::get('/search','SearchController@search')->name('search');
+
+
 Route::post('subscriber','SubscriberController@store')->name('subscriber.store');
 
 
