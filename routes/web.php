@@ -52,6 +52,9 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
 
     Route::get('/favorite','FavoriteController@index')->name('favorite.index');
 
+    Route::get('comments','CommentController@index')->name('comment.index');
+    Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
+
 
 
 });
@@ -66,6 +69,9 @@ Route::group(['as' => 'editor.' ,'prefix' => 'editor' , 'namespace' => 'Editor' 
     Route::put('password-update','SettingController@updatePassword')->name('password.update');
 
     Route::get('/favorite','FavoriteController@index')->name('favorite.index');
+
+    Route::get('comments','CommentController@index')->name('comment.index');
+    Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
 
 });
 
