@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partails/leftsidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partails/leftsidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,29 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="youssef" />
+                    <option name="lastUsedInstant" value="1598198500" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1598184096" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -152,6 +175,22 @@
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
       <path value="$PROJECT_DIR$/vendor/brian2694/laravel-toastr" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gN63QJbvctHj1KYbDXKwtWcQtO" />
@@ -167,7 +206,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/frontend/css/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -202,7 +241,11 @@
       <workItem from="1597970026440" duration="2615000" />
       <workItem from="1598018120967" duration="43144000" />
       <workItem from="1598106135109" duration="27352000" />
-      <workItem from="1598170720549" duration="6991000" />
+      <workItem from="1598170720549" duration="9071000" />
+      <workItem from="1598197527260" duration="5070000" />
+      <workItem from="1598254862881" duration="10870000" />
+      <workItem from="1598516176307" duration="10783000" />
+      <workItem from="1598529077595" duration="2983000" />
     </task>
     <servers />
   </component>
@@ -222,6 +265,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="686" y="377" width="604" height="350" key="#Notifications" timestamp="1598529160159">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="686" y="377" width="604" height="350" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1598529160159" />
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598114776709">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -234,30 +281,34 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="625" y="140" width="726" height="825" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598117841968" />
-    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598059724198">
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598525230384">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598059724198" />
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598525230384" />
     <state x="729" y="394" width="518" height="317" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598106641697">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="729" y="394" width="518" height="317" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/67.27.1853.1053@67.27.1853.1053" timestamp="1598106641696" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598059686101">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598264228841">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598059686101" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598264228841" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1598114903491">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1598114903491" />
-    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog" timestamp="1598177990799">
+    <state x="760" y="272" width="529" height="561" key="NewPhpClassDialog" timestamp="1598524864398">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="760" y="272" width="457" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177990799" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598177999769">
+    <state x="760" y="272" width="529" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598524864398" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1598517838633">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598177999769" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598517838633" />
+    <state x="684" y="291" width="618" height="522" key="find.popup" timestamp="1598518089431">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="684" y="291" width="618" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1598518089431" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

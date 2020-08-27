@@ -27,7 +27,6 @@ class PostController extends Controller
         }
         $randomposts = Post::approved()->published()->take(3)->inRandomOrder()->get();
         return view('post',compact('post','randomposts'));
-
     }
 
     public function postByCategory($slug)
