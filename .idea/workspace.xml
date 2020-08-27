@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +239,7 @@
       <workItem from="1598106135109" duration="27352000" />
       <workItem from="1598170720549" duration="9071000" />
       <workItem from="1598197527260" duration="5070000" />
-      <workItem from="1598254862881" duration="8270000" />
+      <workItem from="1598254862881" duration="10870000" />
     </task>
     <servers />
   </component>
@@ -260,6 +259,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="686" y="377" width="604" height="350" key="#Notifications" timestamp="1598269495750">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="686" y="377" width="604" height="350" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1598269495750" />
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598114776709">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
