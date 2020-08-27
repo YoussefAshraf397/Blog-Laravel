@@ -4,9 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Transformers\PostTransformer;
 use Illuminate\Http\Request;
 
-class SearchController extends Controller
+class SearchController extends BaseApiController
 {
     public function index(Request $request) {
         $user = auth()->user();
@@ -16,6 +17,6 @@ class SearchController extends Controller
             $posts = Post::where('title','LIKE',"%$query%")->approved()->published()->get();
         }
 
-        return response()->json($posts);
+        return $this->transformDataModInclude($posts, ['category' , 'tag'], new PostTransformer(), 'Post' );
     }
 }

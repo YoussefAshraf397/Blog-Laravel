@@ -45,9 +45,10 @@ class AuthController extends BaseApiController
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
-        $success['token'] =  $user->createToken('MyApp')-> accessToken;
-
-        return response()->json(['data' => $user , 'success' => $success], $this-> successStatus);
+        $meta = [
+            'token' =>  $user->createToken('MyApp')-> accessToken
+        ];
+        return $this->transformDataModInclude($user, '', new UserTransformer(), 'Users' , $meta);
     }
 
 
@@ -55,7 +56,13 @@ class AuthController extends BaseApiController
     public function logout(){
         $user = Auth::user()->token();
         $user->revoke();
-        return 'logged out';
+        return response()->json(
+            [
+                "meta" => [
+                    'message' => 'Successfully Logged Out'
+                ]
+            ]
+        );
     }
 
 
