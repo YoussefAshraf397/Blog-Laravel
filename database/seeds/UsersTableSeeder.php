@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('password'),
+            'created_at' => now()
 
         ]);
         \Illuminate\Support\Facades\DB::table('users')->insert([
@@ -25,6 +26,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'editor',
             'email' => 'editor@editor.com',
             'password' => bcrypt('password'),
+            'created_at' => now()
 
         ]);
     }
