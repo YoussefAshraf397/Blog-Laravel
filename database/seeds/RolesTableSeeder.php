@@ -13,11 +13,13 @@ class RolesTableSeeder extends Seeder
     {
         \Illuminate\Support\Facades\DB::table('roles')->insert([
             'name' => 'Admin' ,
-            'slug' => 'admin'
+            'slug' => 'admin' ,
+            'created_at' => now()
         ]);
         \Illuminate\Support\Facades\DB::table('roles')->insert([
             'name' => 'Editor' ,
-            'slug' => 'editor'
+            'slug' => 'editor' ,
+            'created_at' => now()
         ]);
 
     }
