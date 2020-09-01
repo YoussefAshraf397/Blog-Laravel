@@ -49,7 +49,7 @@
                         <div class="card h-100">
                             <div class="single-post post-style-1">
 
-                                <div class="blog-image"><img src="{{ Storage::disk('public')->url('post/'.$post->image) }}" alt="{{ $post->title }}"></div>
+                                <div class="blog-image"><img src="{{ url('post/'.$post->image) }}" alt="{{ $post->title }}"></div>
 
                                 <a class="avatar" href="{{ route('editor.profile',$post->user->username) }}"><img src="{{url('profile/'.$post->user->image) }}" alt="Profile Image"></a>
 
