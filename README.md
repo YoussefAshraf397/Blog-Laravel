@@ -7,3 +7,5 @@ This is small blog has three types of users each user has a role. Build some end
 
 We Have notifications for our all users like: Notify Admin when needing approval editor post and notify editor when admin approve the post and notify subscriber or visitors when adding new post via mail## Learning Laravel
 
+Link of Blog is deployed on herouku : https://blogmangerlaraa.herokuapp.com/
+
