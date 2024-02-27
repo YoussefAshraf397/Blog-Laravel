@@ -132,5 +132,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="toastr.js" level="application" />
+    <orderEntry type="library" name="toastr" level="application" />
+    <orderEntry type="library" name="buttons" level="application" />
+    <orderEntry type="library" name="sweetalert2" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="42d5adcbca" level="application" />
   </component>
 </module>

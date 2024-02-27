@@ -39,11 +39,26 @@ Route::group(['middleware'=>['auth']], function (){
 
 
 Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['auth' , 'admin']], function (){
+    //new
+    Route::resource('country' , 'CountryController');
+    Route::resource('governorate' , 'GovernorateController');
+    Route::resource('city' , 'CityController');
+    Route::resource('place-type' , 'PlaceTypeController');
+    Route::resource('property-type' , 'PropertyTypeController');
+    Route::resource('place' , 'PlaceController');
+
+    Route::resource('package' , 'PackageController');
+    Route::resource('category' , 'CategoryController');
+    Route::resource('additional-service' , 'AdditionalServiceController');
+    Route::resource('attribute' , 'AttributeController');
+
+
+
     Route::get('dashboard' , 'DashboardController@getIndex')->name('dashboard');
 
     Route::resource('tag' , 'TagController');
 
-    Route::resource('category' , 'CategoryController');
+//    Route::resource('category' , 'CategoryController');
 
     Route::resource('post' , 'PostController');
     Route::get('/pending/post','PostController@pending')->name('post.pending');
