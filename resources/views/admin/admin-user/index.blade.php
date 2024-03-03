@@ -41,6 +41,9 @@
                             </thead>
                             <tbody>
                             @foreach($users as $key=>$user)
+                                @php
+                                    $countryName = json_decode($user->country->name, true);
+                                @endphp
                                 <tr>
                                     <td class="text-sm font-weight-normal">
                                         <div>
@@ -52,11 +55,11 @@
                                     <td class="text-sm font-weight-normal">{{$user->country_code}}</td>
                                     <td class="text-sm font-weight-normal">{{$user->status}}</td>
                                     <td class="text-sm font-weight-normal">{{$user->type}}</td>
-                                    <td class="text-sm font-weight-normal">{{$user->country}}</td>
+                                    <td class="text-sm font-weight-normal">{{$countryName['en']}}</td>
 
                                     <td >
                                         <div class="dropdown ">
-                                            <a href="javascript:;" class="cursor-pointer" id="dropdownTable2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a href="javascript:" class="cursor-pointer" id="dropdownTable2" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-ellipsis-h text-secondary" aria-hidden="true"></i>
                                             </a>
                                             <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable2" style="">

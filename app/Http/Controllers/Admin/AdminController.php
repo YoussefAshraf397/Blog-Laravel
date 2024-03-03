@@ -94,40 +94,79 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        $city = City::find($id);
-        $governorates = Governorate::all();
-        return view('admin.city.edit',compact('city', 'governorates'));
+        $user = User::find($id);
+        $userStatuses = UserStatusEnum::getValues();
+        $userTypes = UserTypeEnum::getValues();
+        $userGenders = UserGenderEnum::getValues();
+        $countries = Country::all();
+        return view('admin.admin-user.edit',compact('user', 'userStatuses', 'userTypes', 'userGenders', 'countries'));
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name_en' => 'required',
-            'name_ar' => 'required',
-            'name_soundex' => 'required|string|max:255',
-            'governorate_id' => 'required|exists:governorates,id',
+            'name' => 'required',
+            'email' => 'required',
+            'status' => 'required',
+            'type' => 'required',
+            'gender' => 'required',
+            'password' => 'required',
+            'phone' => 'required',
+            'country_code' => 'required',
+            'country_id' => 'required|exists:countries,id',
+            'profile_image' => 'mimes:jpeg,bmp,png,jpg'
         ]);
+
+        // get form image
+        $image = $request->file('profile_image');
+        $user = User::find($id);
+        if (isset($image))
+        {
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            if (!Storage::disk('public')->exists('user'))
+            {
+                Storage::disk('public')->makeDirectory('user');
+            }
+//            delete old image
+            if (Storage::disk('public')->exists('user/'.$user->profile_image))
+            {
+                Storage::disk('public')->delete('user/'.$user->profile_image);
+            }
+//            resize image for category and upload
+            $userImage = Image::make($image)->resize(1600,479)->save();
+            Storage::disk('public')->put('user/'.$imagename,$userImage);
+
+        } else {
+            $imagename = $user->profile_image;
+        }
+
+
         $input = $request->all();
 
-        $input['name']['ar'] = $input['name_ar'];
-        $input['name']['en'] = $input['name_en'];
 
-        $city = City::find($id);
-        $city->name = json_encode($input['name']);
-        $city->name_soundex = $input['name_soundex'];
-        $city->governorate_id = $input['governorate_id'];
-        $city->save();
+        $user->name = $input['name'];
+        $user->email = $input['email'];
+        $user->status = $input['status'];
+        $user->type = $input['type'];
+        $user->gender = $input['gender'];
+        $user->phone = $input['phone'];
+        $user->country_code = $input['country_code'];
+        $user->country_id = $input['country_id'];
+        $user->password = bcrypt($input['password']);
+        $user->profile_image = $imagename;
+        $user->save();
 
-        toastr()->success('City has been updated successfully!');
-        return redirect()->route('admin.city.index');
+        toastr()->success('User has been updated successfully!');
+        return redirect()->route('admin.admin-user.index');
     }
 
     public function destroy($id)
     {
-        $city = City::find($id);
-        $city->delete();
-        toastr()->success('City has been deleted successfully!');
-        return redirect()->route('admin.city.index');
+        $user = User::find($id);
+        $user->delete();
+        toastr()->success('User has been deleted successfully!');
+        return redirect()->route('admin.admin-user.index');
     }
 
     public function removeRole(User $user, Role $role)

@@ -12,88 +12,104 @@
     <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
 {{--            users--}}
-            <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#users" class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
-                    <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
-                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+            @if(Auth::user()->hasAnyPermission(['view Dashboard User']))
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#users" class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
+                        <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                            <i class="fa fa-users text-info text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Users</span>
+                    </a>
+                    <div class="collapse " id="users">
+                        @if(Auth::user()->can('view Dashboard User'))
+                            <ul class="nav ms-4">
+                                <li class="nav-item ">
+                                    <a class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" href="{{route('admin.admin-user.index')}}">
+                                        <span class="sidenav-mini-icon"> DU </span>
+                                        <span class="sidenav-normal"> Dashboard Users </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        @endif
                     </div>
-                    <span class="nav-link-text ms-1">Users</span>
-                </a>
-                <div class="collapse " id="users">
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" href="{{route('admin.admin-user.index')}}">
-                                <span class="sidenav-mini-icon"> DU </span>
-                                <span class="sidenav-normal"> Dashboard Users </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+                </li>
+            @endif
 
-
-            <li class="nav-item">
+{{--            Location--}}
+            @if(Auth::user()->hasAnyPermission(['view Country', 'view Governorate', 'view City']))
+              <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#locations" class="nav-link {{request()->is('*/country', '*/country/*', '*/governorate', '*/governorate/*','*/city', '*/city/*') ? 'active' : ''}}" aria-controls="locations" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
-                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+                        <i class="fa fa-map-marker text-info text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Location</span>
                 </a>
                 <div class="collapse " id="locations">
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/country', '*/country/*') ? 'active' : ''}}" href="{{route('admin.country.index')}}">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal"> Countries </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/governorate', '*/governorate/*') ? 'active' : ''}}" href="{{route('admin.governorate.index')}}">
-                                <span class="sidenav-mini-icon"> G </span>
-                                <span class="sidenav-normal"> Governorates </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link  {{request()->is('*/city', '*/city/*') ? 'active' : ''}}" href="{{route('admin.city.index')}}">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal"> Cities </span>
-                            </a>
-                        </li>
-                    </ul>
+                    @if(Auth::user()->can('view Country'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/country', '*/country/*') ? 'active' : ''}}" href="{{route('admin.country.index')}}">
+                                    <span class="sidenav-mini-icon"> C </span>
+                                    <span class="sidenav-normal"> Countries </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view Governorate'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/governorate', '*/governorate/*') ? 'active' : ''}}" href="{{route('admin.governorate.index')}}">
+                                    <span class="sidenav-mini-icon"> G </span>
+                                    <span class="sidenav-normal"> Governorates </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view City'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link  {{request()->is('*/city', '*/city/*') ? 'active' : ''}}" href="{{route('admin.city.index')}}">
+                                    <span class="sidenav-mini-icon"> C </span>
+                                    <span class="sidenav-normal"> Cities </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                 </div>
             </li>
+            @endif
 
 {{--            Place--}}
 
-            @if(Auth::user()->hasAnyPermission(['view Place']))
+            @if(Auth::user()->hasAnyPermission(['view Place', 'view PlaceType', 'view PropertyType', 'view Package', 'view Category', 'view AdditionalService', 'view Attribute']))
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#places" class="nav-link {{request()->is('*/place-type', '*/place-type/*','*/property-type', '*/property-type/*','*/place', '*/place/*','*/package', '*/package/*','*/category', '*/category/*','*/attribute', '*/attribute/*','*/additional-service', '*/additional-service/*') ? 'active' : ''}}" aria-controls="places" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
-                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+                        <i class="fa fa-bookmark text-info text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Places</span>
                 </a>
                 <div class="collapse " id="places">
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/place-type', '*/place-type/*') ? 'active' : ''}}" href="{{route('admin.place-type.index')}}">
-                                <span class="sidenav-mini-icon"> PT </span>
-                                <span class="sidenav-normal"> Place Types </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/property-type', '*/property-type/*') ? 'active' : ''}}" href="{{route('admin.property-type.index')}}">
-                                <span class="sidenav-mini-icon"> PT </span>
-                                <span class="sidenav-normal"> Property Types </span>
-                            </a>
-                        </li>
-                    </ul>
+                    @if(Auth::user()->can('view PlaceType'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/place-type', '*/place-type/*') ? 'active' : ''}}" href="{{route('admin.place-type.index')}}">
+                                    <span class="sidenav-mini-icon"> PT </span>
+                                    <span class="sidenav-normal"> Place Types </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view PropertyType'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/property-type', '*/property-type/*') ? 'active' : ''}}" href="{{route('admin.property-type.index')}}">
+                                    <span class="sidenav-mini-icon"> PT </span>
+                                    <span class="sidenav-normal"> Property Types </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                     @if(Auth::user()->can('view Place'))
                         <ul class="nav ms-4">
                             <li class="nav-item ">
@@ -104,38 +120,46 @@
                             </li>
                         </ul>
                     @endif
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/package', '*/package/*') ? 'active' : ''}}" href="{{route('admin.package.index')}}">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal"> Packages </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/category', '*/category/*') ? 'active' : ''}}" href="{{route('admin.category.index')}}">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal"> Categories </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/additional-service', '*/additional-service/*') ? 'active' : ''}}" href="{{route('admin.additional-service.index')}}">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal"> Additional Services </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/attribute', '*/attribute/*') ? 'active' : ''}}" href="{{route('admin.attribute.index')}}">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal"> Attributes </span>
-                            </a>
-                        </li>
-                    </ul>
+                    @if(Auth::user()->can('view Package'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/package', '*/package/*') ? 'active' : ''}}" href="{{route('admin.package.index')}}">
+                                    <span class="sidenav-mini-icon"> P </span>
+                                    <span class="sidenav-normal"> Packages </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view Category'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/category', '*/category/*') ? 'active' : ''}}" href="{{route('admin.category.index')}}">
+                                    <span class="sidenav-mini-icon"> C </span>
+                                    <span class="sidenav-normal"> Categories </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view AdditionalService'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/additional-service', '*/additional-service/*') ? 'active' : ''}}" href="{{route('admin.additional-service.index')}}">
+                                    <span class="sidenav-mini-icon"> A </span>
+                                    <span class="sidenav-normal"> Additional Services </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view Attribute'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/attribute', '*/attribute/*') ? 'active' : ''}}" href="{{route('admin.attribute.index')}}">
+                                    <span class="sidenav-mini-icon"> A </span>
+                                    <span class="sidenav-normal"> Attributes </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                 </div>
             </li>
             @endif
@@ -145,7 +169,8 @@
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#privileges" class="nav-link {{request()->is('*/role', '*/role/*','*/permission', '*/permission/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
-                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+                        <i class="fa fa-cog
+                         text-info text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Privilege</span>
                 </a>

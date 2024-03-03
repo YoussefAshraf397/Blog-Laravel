@@ -37,15 +37,12 @@ class PlaceTypeController extends Controller
         $slug = str_slug($request->name);
         if (isset($image))
         {
-//            make unique name for image
             $currentDate = Carbon::now()->toDateString();
             $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-//            check category dir is exists
             if (!Storage::disk('public')->exists('place-type'))
             {
                 Storage::disk('public')->makeDirectory('place-type');
             }
-//            resize image for category and upload
             $category = Image::make($image)->resize(1600,479)->save();
             Storage::disk('public')->put('place-type/'.$imagename,$category);
 
