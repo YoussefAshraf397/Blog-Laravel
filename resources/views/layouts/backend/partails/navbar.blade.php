@@ -198,6 +198,42 @@
                 </div>
             </li>
             @endif
+
+{{--            Settings--}}
+            @if(Auth::user()->hasAnyPermission(['view Policy', 'view System Configuration']))
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#settings" class="nav-link {{request()->is('*/policy', '*/policy/*','*/system-configuration', '*/system-configuration/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
+                    <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-desktop
+                         text-info text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Settings</span>
+                </a>
+                <div class="collapse " id="settings">
+                    @if(Auth::user()->can('view Policy'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/policy', '*/policy/*') ? 'active' : ''}}" href="{{route('admin.policy.index')}}">
+                                    <span class="sidenav-mini-icon"> P </span>
+                                    <span class="sidenav-normal"> Polices </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view System Configuration'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/system-configuration', '*/system-configuration/*') ? 'active' : ''}}" href="{{route('admin.system-configuration.index')}}">
+                                    <span class="sidenav-mini-icon"> SC </span>
+                                    <span class="sidenav-normal"> System Configurations </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                </div>
+            </li>
+            @endif
+
         </ul>
     </div>
 </aside>

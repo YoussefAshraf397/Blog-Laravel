@@ -52,13 +52,14 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('category' , 'CategoryController');
     Route::resource('additional-service' , 'AdditionalServiceController');
     Route::resource('attribute' , 'AttributeController');
+    Route::resource('policy' , 'PolicyController');
+    Route::resource('system-configuration' , 'SystemConfigurationController');
+
 
 //    Privileges Routes
     Route::resource('role' , 'RoleController');
     Route::resource('permission' , 'PermissionController');
-
     Route::resource('admin-user' , 'AdminController');
-
     Route::delete('/users/{user}/roles/{role}', [AdminController::class, 'removeRole'])->name('users.roles.remove');
     Route::post('/users/{user}/roles', [AdminController::class, 'assignRole'])->name('users.roles');
     Route::delete('/users/{user}/permissions/{permission}', [AdminController::class, 'revokePermission'])->name('users.permissions.revoke');

@@ -1,9 +1,8 @@
 <?php
 
-use App\User;
+use App\Enums\FeedTypeEnum;
+use App\Models\Feed;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class TestSeeder extends Seeder
 {
@@ -17,59 +16,29 @@ class TestSeeder extends Seeder
      */
     public function run(): void
     {
-        $permissions = array_merge(
-            $this->modulePermissions('Address'),
-            $this->modulePermissions('Bank'),
-            $this->modulePermissions('City'),
-            $this->modulePermissions('Country'),
-            $this->modulePermissions('Device'),
-            $this->modulePermissions('ExternalServiceCategory'),
-            $this->modulePermissions('ExternalService'),
-            $this->modulePermissions('ExternalServiceProvider'),
-            $this->modulePermissions('ExternalServiceProviderWorkDay'),
-            $this->modulePermissions('Feed'),
-            $this->modulePermissions('Governorate'),
-            $this->modulePermissions('Package'),
-            $this->modulePermissions('Place'),
-            $this->modulePermissions('PlaceType'),
-            $this->modulePermissions('PropertyType'),
-            $this->modulePermissions('TransferRequest'),
-            $this->modulePermissions('TransferRequestNotes'),
-            $this->modulePermissions('UserBankAccount'),
-            $this->modulePermissions('UserWallet'),
-            $this->modulePermissions('WalletLogs'),
-            $this->modulePermissions('Role'),
-            $this->modulePermissions("Promocode"),
-            $this->modulePermissions("Category"),
-            $this->modulePermissions("Reservation"),
-            $this->modulePermissions("AdditionalService"),
-            $this->modulePermissions("Mobile User"),
-            $this->modulePermissions("Dashboard User"),
-            $this->modulePermissions("AdditionalService"),
-            $this->modulePermissions("Attribute"),
-            $this->modulePermissions("Permission"),
+        $feeds = [
             [
-                'send Notfication'
+                'title_en' => 'About Us',
+                'title_ar' => 'معلومات عنا',
+                'description_en' => 'About us description',
+                'description_ar' => 'وصف عنا',
+                'type' => FeedTypeEnum::ABOUT,
             ]
-        );
-
-
-        foreach($permissions as $permission) {
-            Permission::firstOrCreate(['name' => $permission]);
-        }
-
-        $adminRole = Role::firstOrCreate(["name" => "admin"]);
-
-        $adminRole->syncPermissions($permissions);
-
-        User::admins()->get()->each->assignRole($adminRole);
-    }
-
-
-    private function modulePermissions($module): array
-    {
-        return [
-            'view ' . $module,
         ];
+
+        foreach ($feeds as $feed) {
+            Feed::create([
+                'title' => json_encode([
+                    'en' => $feed['title_en'],
+                    'ar' => $feed['title_ar']
+                ]),
+                'description' => json_encode([
+                    'en' => $feed['description_en'],
+                    'ar' => $feed['description_ar']
+                ]),
+                'type' => $feed['type']
+            ]);
+        }
     }
+
 }
