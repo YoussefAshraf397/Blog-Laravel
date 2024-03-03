@@ -110,7 +110,7 @@
 
     <script>
         const dataTableBasic = new simpleDatatables.DataTable("#datatable-basic", {
-            searchable: false,
+            searchable: true,
             fixedHeight: true
         });
     </script>

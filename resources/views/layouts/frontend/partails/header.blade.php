@@ -7,17 +7,11 @@
 
         <ul class="main-menu visible-on-click" id="main-menu">
             <li><a href="{{route('home-page')}}">Home</a></li>
-            <li><a href="{{route('post.index')}}">Posts</a></li>
             @guest
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
-                @if(Auth::user()->role->id == 1)
                     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                @endif
-                @if(Auth::user()->role->id == 2)
-                    <li><a href="{{ route('editor.dashboard') }}">Dashboard</a></li>
-                @endif
             @endguest
         </ul><!-- main-menu -->
 
