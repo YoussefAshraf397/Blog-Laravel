@@ -13,7 +13,7 @@
         <ul class="navbar-nav">
 {{--            users--}}
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#users" class="nav-link {{request()->is('') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
+                <a data-bs-toggle="collapse" href="#users" class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                         <i class="ni ni-shop text-primary text-sm opacity-10"></i>
                     </div>
@@ -22,15 +22,7 @@
                 <div class="collapse " id="users">
                     <ul class="nav ms-4">
                         <li class="nav-item ">
-                            <a class="nav-link {{request()->is('') ? 'active' : ''}}" href="">
-                                <span class="sidenav-mini-icon"> MU </span>
-                                <span class="sidenav-normal"> Mobile App Users </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('') ? 'active' : ''}}" href="">
+                            <a class="nav-link {{request()->is('*/admin-user', '*/admin-user/*') ? 'active' : ''}}" href="{{route('admin.admin-user.index')}}">
                                 <span class="sidenav-mini-icon"> DU </span>
                                 <span class="sidenav-normal"> Dashboard Users </span>
                             </a>
@@ -75,6 +67,9 @@
                 </div>
             </li>
 
+{{--            Place--}}
+
+            @if(Auth::user()->hasAnyPermission(['view Place']))
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#places" class="nav-link {{request()->is('*/place-type', '*/place-type/*','*/property-type', '*/property-type/*','*/place', '*/place/*','*/package', '*/package/*','*/category', '*/category/*','*/attribute', '*/attribute/*','*/additional-service', '*/additional-service/*') ? 'active' : ''}}" aria-controls="places" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
@@ -99,14 +94,16 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="nav ms-4">
-                        <li class="nav-item ">
-                            <a class="nav-link {{request()->is('*/place', '*/place/*') ? 'active' : ''}}" href="{{route('admin.place.index')}}">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal"> Places </span>
-                            </a>
-                        </li>
-                    </ul>
+                    @if(Auth::user()->can('view Place'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/place', '*/place/*') ? 'active' : ''}}" href="{{route('admin.place.index')}}">
+                                    <span class="sidenav-mini-icon"> P </span>
+                                    <span class="sidenav-normal"> Places </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                     <ul class="nav ms-4">
                         <li class="nav-item ">
                             <a class="nav-link {{request()->is('*/package', '*/package/*') ? 'active' : ''}}" href="{{route('admin.package.index')}}">
@@ -141,7 +138,41 @@
                     </ul>
                 </div>
             </li>
+            @endif
 
+{{--            privillage--}}
+            @if(Auth::user()->hasAnyPermission(['view Role', 'view permissions']))
+            <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#privileges" class="nav-link {{request()->is('*/role', '*/role/*','*/permission', '*/permission/*') ? 'active' : ''}}" aria-controls="users" role="button" aria-expanded="false">
+                    <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Privilege</span>
+                </a>
+                <div class="collapse " id="privileges">
+                    @if(Auth::user()->can('view Role'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/role', '*/role/*') ? 'active' : ''}}" href="{{route('admin.role.index')}}">
+                                    <span class="sidenav-mini-icon"> R </span>
+                                    <span class="sidenav-normal"> Roles </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                    @if(Auth::user()->can('view permissions'))
+                        <ul class="nav ms-4">
+                            <li class="nav-item ">
+                                <a class="nav-link {{request()->is('*/permission', '*/permission/*') ? 'active' : ''}}" href="{{route('admin.permission.index')}}">
+                                    <span class="sidenav-mini-icon"> P </span>
+                                    <span class="sidenav-normal"> Permissions </span>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
+                </div>
+            </li>
+            @endif
         </ul>
     </div>
 </aside>

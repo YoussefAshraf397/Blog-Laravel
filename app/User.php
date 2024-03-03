@@ -2,62 +2,21 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\User\UserTypeEnum;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use HasApiTokens;
+    use HasRoles;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password', 'username', 'image','role_id'
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    public function role(){
-        return $this->belongsTo('App\Role');
-    }
-
-    public function posts(){
-        return $this->hasMany('App\Post');
-    }
-
-    public function favorite_posts(){
-        return $this->belongsToMany('App\Post')->withTimestamps();
-    }
-
-    public function comments()
+    public function scopeAdmins(Builder $q): Builder
     {
-        return $this->hasMany('App\Comment');
-    }
-
-    public function scopeEditors($query)
-    {
-        return $query->where('role_id',2);
+        return $q->where("type", UserTypeEnum::ADMIN);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +39,7 @@ Route::group(['middleware'=>['auth']], function (){
 });
 
 
-Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['auth' , 'admin']], function (){
+Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['auth', 'role:admin' ]], function (){
     //new
     Route::resource('country' , 'CountryController');
     Route::resource('governorate' , 'GovernorateController');
@@ -51,6 +52,22 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('category' , 'CategoryController');
     Route::resource('additional-service' , 'AdditionalServiceController');
     Route::resource('attribute' , 'AttributeController');
+
+//    Privileges Routes
+    Route::resource('role' , 'RoleController');
+    Route::resource('permission' , 'PermissionController');
+
+    Route::resource('admin-user' , 'AdminController');
+
+    Route::delete('/users/{user}/roles/{role}', [AdminController::class, 'removeRole'])->name('users.roles.remove');
+    Route::post('/users/{user}/roles', [AdminController::class, 'assignRole'])->name('users.roles');
+    Route::delete('/users/{user}/permissions/{permission}', [AdminController::class, 'revokePermission'])->name('users.permissions.revoke');
+    Route::post('/users/{user}/permissions', [AdminController::class, 'givePermission'])->name('users.permissions');
+
+
+
+
+
 
 
 

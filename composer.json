@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ext-gd": " *",
         "brian2694/laravel-toastr": "^5.54",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
@@ -21,7 +22,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "spatie/laravel-fractal": "^5.7",
-        "ext-gd":" *"
+        "spatie/laravel-permission": "^5.11"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
