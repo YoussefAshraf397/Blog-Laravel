@@ -25,9 +25,6 @@
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1851a1b9-236f-497a-871e-4fec3f19e360.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1851a1b9-236f-497a-871e-4fec3f19e360.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/RoleSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TestSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TestSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partails/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partails/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -229,7 +226,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/var/www/html/Blog-Laravel/resources/views/admin/system-configuration",
+    "last_opened_file_path": "/var/www/html/Blog-Laravel/resources/views/admin/bank",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -240,11 +237,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/system-configuration" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/bank" />
       <recent name="$PROJECT_DIR$/database/migrations" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/system-configuration" />
       <recent name="$PROJECT_DIR$/resources/views/admin/policy" />
       <recent name="$PROJECT_DIR$/resources/views/admin/admin-user" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/permission" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/database/draft" />
@@ -283,7 +280,7 @@
       <workItem from="1598529077595" duration="10969000" />
       <workItem from="1598545506425" duration="4660000" />
       <workItem from="1708299744994" duration="142292000" />
-      <workItem from="1709402585886" duration="46296000" />
+      <workItem from="1709402585886" duration="52445000" />
     </task>
     <servers />
   </component>

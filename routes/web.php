@@ -54,6 +54,8 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('attribute' , 'AttributeController');
     Route::resource('policy' , 'PolicyController');
     Route::resource('system-configuration' , 'SystemConfigurationController');
+    Route::resource('bank' , 'BankController');
+
 
 
 //    Privileges Routes

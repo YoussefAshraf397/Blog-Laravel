@@ -44,7 +44,6 @@
                                     <td class="text-xs font-weight-bold">
                                         <div class="d-flex align-items-center">
                                             <button class="btn btn-icon-only btn-rounded btn-outline-{{$placeType->status == 'active' ? 'success' : 'danger' }} mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-{{$placeType->status == 'active' ? 'check' : 'times'}}" aria-hidden="true"></i></button>
-                                            <span>{{$placeType->status}}</span>
                                         </div>
                                     </td>
 {{--                                    <td class="text-sm font-weight-normal">{{$placeType->status}}</td>--}}
