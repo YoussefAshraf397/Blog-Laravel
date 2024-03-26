@@ -47,7 +47,6 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('place-type' , 'PlaceTypeController');
     Route::resource('property-type' , 'PropertyTypeController');
     Route::resource('place' , 'PlaceController');
-
     Route::resource('package' , 'PackageController');
     Route::resource('category' , 'CategoryController');
     Route::resource('additional-service' , 'AdditionalServiceController');
@@ -55,7 +54,7 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('policy' , 'PolicyController');
     Route::resource('system-configuration' , 'SystemConfigurationController');
     Route::resource('bank' , 'BankController');
-
+    Route::resource('user-bank-account' , 'UserBankAccountController');
 
 
 //    Privileges Routes

@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db77c369-9b1c-4704-ad88-56839e0fe7ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1851a1b9-236f-497a-871e-4fec3f19e360.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1851a1b9-236f-497a-871e-4fec3f19e360.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partails/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partails/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BankController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2024_04_19_190425_create_user_bank_accounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_04_19_190425_create_user_bank_accounts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +281,7 @@
       <workItem from="1598529077595" duration="10969000" />
       <workItem from="1598545506425" duration="4660000" />
       <workItem from="1708299744994" duration="142292000" />
-      <workItem from="1709402585886" duration="52445000" />
+      <workItem from="1709402585886" duration="53146000" />
     </task>
     <servers />
   </component>

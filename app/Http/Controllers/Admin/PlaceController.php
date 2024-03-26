@@ -9,10 +9,7 @@ use App\Models\Place;
 use App\Models\PlaceType;
 use App\Models\PropertyType;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 
 class PlaceController extends Controller
 {

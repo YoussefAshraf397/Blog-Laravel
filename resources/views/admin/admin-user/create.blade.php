@@ -14,7 +14,7 @@
             <div class="card card-body mt-4">
                 <form action="{{ route('admin.admin-user.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <h6 class="mb-0">New City</h6>
+                    <h6 class="mb-0">New Admin User</h6>
                     <p class="text-sm mb-0">Create new admin user</p>
                     <hr class="horizontal dark my-3">
 

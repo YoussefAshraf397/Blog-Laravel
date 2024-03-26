@@ -258,7 +258,7 @@
                     @if(Auth::user()->can('view System Configuration'))
                         <ul class="nav ms-4">
                             <li class="nav-item ">
-                                <a class="nav-link {{request()->is('*/user-bank-account', '*/user-bank-account/*') ? 'active' : ''}}" href="{{route('admin.system-configuration.index')}}">
+                                <a class="nav-link {{request()->is('*/user-bank-account', '*/user-bank-account/*') ? 'active' : ''}}" href="{{route('admin.user-bank-account.index')}}">
                                     <span class="sidenav-mini-icon"> UBA </span>
                                     <span class="sidenav-normal"> User Bank Accounts </span>
                                 </a>
