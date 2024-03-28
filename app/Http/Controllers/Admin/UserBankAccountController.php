@@ -86,7 +86,7 @@ class UserBankAccountController extends Controller
         $users = User::where('status','active')->get();
         $banks = Bank::where('status', 1)->get();
         $userBankAccount = UserBankAccount::find($id);
-        return view('admin.bank.edit',compact('banks', 'userBankAccount','users'));
+        return view('admin.user-bank-account.edit',compact('banks', 'userBankAccount','users'));
     }
 
     public function update(Request $request, $id)
@@ -104,40 +104,52 @@ class UserBankAccountController extends Controller
         ]);
         $input = $request->all();
 
-        $image = $request->file('icon');
-        $bank = Bank::find($id);
-        if (isset($image))
+        $frontImage = $request->file('front_media');
+        $backImage = $request->file('back_media');
+        $userBankAccount = UserBankAccount::find($id);
+        if (isset($frontImage,$backImage))
         {
             $currentDate = Carbon::now()->toDateString();
-            $imagename = $currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            if (!Storage::disk('public')->exists('bank'))
+            $imageNameFront = $currentDate.'-'.uniqid().'.'.$frontImage->getClientOriginalExtension();
+            $imageNameBack = $currentDate.'-'.uniqid().'.'.$backImage->getClientOriginalExtension();
+
+            if (!Storage::disk('public')->exists('user-bank-account'))
             {
-                Storage::disk('public')->makeDirectory('bank');
+                Storage::disk('public')->makeDirectory('user-bank-account');
             }
-            if (Storage::disk('public')->exists('bank/'.$category->image))
+            if (Storage::disk('public')->exists('user-bank-account/'.$userBankAccount->front_media))
             {
-                Storage::disk('public')->delete('bank/'.$category->image);
+                Storage::disk('public')->delete('user-bank-account/'.$userBankAccount->front_media);
             }
-            $categoryimage = Image::make($image)->resize(1600,479)->save();
-            Storage::disk('public')->put('bank/'.$imagename,$categoryimage);
+            {
+                Storage::disk('public')->delete('user-bank-account/'.$userBankAccount->back_media);
+            }
+            $front = Image::make($frontImage)->resize(1600,479)->save();
+            $back = Image::make($backImage)->resize(1600,479)->save();
+            Storage::disk('public')->put('user-bank-account/'.$imageNameFront,$front);
+            Storage::disk('public')->put('user-bank-account/'.$imageNameBack,$back);
         } else {
-            $imagename = $bank->icon;
+            $imageNameFront = $userBankAccount->front_media;
+            $imageNameBack = $userBankAccount->back_media;
         }
 
-        $input['name']['ar'] = $input['name_ar'];
-        $input['name']['en'] = $input['name_en'];
-
-        $bank->name = json_encode($input['name']) ;
-        $bank->status = $input['status'];
-        $bank->icon = $imagename;
-        $bank->save();
-        toastr()->success('Bank has been updated successfully!');
-        return redirect()->route('admin.bank.index');
+        $userBankAccount->user_id = $input['user_id'];
+        $userBankAccount->bank_id = $input['bank_id'];
+        $userBankAccount->account_name = $input['account_name'] ;
+        $userBankAccount->swift_code = $input['swift_code'];
+        $userBankAccount->branch_name = $input['branch_name'];
+        $userBankAccount->account_number = $input['account_number'];
+        $userBankAccount->iban = $input['iban'];
+        $userBankAccount->front_media = $imageNameFront;
+        $userBankAccount->back_media = $imageNameBack;
+        $userBankAccount->save();
+        toastr()->success('User bank account has been updated successfully!');
+        return redirect()->route('admin.user-bank-account.index');
     }
 
     public function destroy($id)
     {
-        $bank = Bank::find($id);
+        $bank = UserBankAccount::find($id);
         if (Storage::disk('public')->exists('bank/'.$bank->image))
         {
             Storage::disk('public')->delete('bank/'.$bank->image);

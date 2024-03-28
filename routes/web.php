@@ -55,6 +55,7 @@ Route::group(['as' => 'admin.' ,'prefix' => 'admin' , 'namespace' => 'Admin' , '
     Route::resource('system-configuration' , 'SystemConfigurationController');
     Route::resource('bank' , 'BankController');
     Route::resource('user-bank-account' , 'UserBankAccountController');
+    Route::resource('transfer-request' , 'TransferRequestController');
 
 
 //    Privileges Routes

@@ -12,20 +12,19 @@
             <div class="col-lg-9 col-12 mx-auto">
 
                 <div class="card card-body mt-4">
-                    <form action="{{ route('admin.user-bank-account.update',$userBankAccount->id) }}" method="POST"
-                          enctype="multipart/form-data" id = 'identifier'>
+                    <form action="{{ route('admin.user-bank-account.store') }}" method="POST" enctype="multipart/form-data" id="identifier">
                         @csrf
-                        @method('PUT')
-
-                        <h6 class="mb-0">Edit User Bank Account</h6>
-                        <p class="text-sm mb-0">Edit User Bank Account</p>
+                        <h6 class="mb-0">New User Bank Account</h6>
+                        <p class="text-sm mb-0">Create user bank account</p>
                         <hr class="horizontal dark my-3">
+
                         <div class="row mt-3">
                             <div class="col-12 col-sm-6">
                                 <label>User</label>
                                 <select name="user_id" class="multisteps-form__select form-control">
+                                    <option selected="selected">...</option>
                                     @foreach($users as $user)
-                                        <option {{$user->id == $userBankAccount->user_id ? 'selected="selected"' : ''}} value="{{$user->id}}">{{$user->name}}</option>
+                                        <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -37,7 +36,7 @@
                                         @php
                                             $bankArray = json_decode($bank->name, true);
                                         @endphp
-                                        <option {{$bank->id == $userBankAccount->bank_id ? 'selected="selected"' : ''}} value="{{$bank->id}}">{{$bankArray['en']}}</option>
+                                        <option value="{{$bank->id}}">{{$bankArray['en']}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -46,26 +45,26 @@
                         <div class="row mt-3">
                             <div class="col-12 col-sm-4">
                                 <label>Account Name</label>
-                                <input name="account_name" class="multisteps-form__input form-control" type="text" value="{{$userBankAccount->account_name}}" />
+                                <input name="account_name" class="multisteps-form__input form-control" type="text" placeholder="..." />
                             </div>
                             <div class="col-12 col-sm-4 mt-3 mt-sm-0">
                                 <label>Branch Name</label>
-                                <input name="branch_name" class="multisteps-form__input form-control" type="text" value="{{$userBankAccount->branch_name}}" />
+                                <input name="branch_name" class="multisteps-form__input form-control" type="text" placeholder="..." />
                             </div>
                             <div class="col-12 col-sm-4 mt-3 mt-sm-0">
                                 <label>IBAN</label>
-                                <input name="iban" class="multisteps-form__input form-control" type="text" value="{{$userBankAccount->iban}}" />
+                                <input name="iban" class="multisteps-form__input form-control" type="text" placeholder="..." />
                             </div>
                         </div>
 
                         <div class="row mt-3">
                             <div class="col-12 col-sm-6">
                                 <label>Swift Code</label>
-                                <input name="swift_code" class="multisteps-form__input form-control" type="text" value="{{$userBankAccount->swift_code}}" />
+                                <input name="swift_code" class="multisteps-form__input form-control" type="text" placeholder="..." />
                             </div>
                             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                                 <label>Account Number</label>
-                                <input name="account_number" class="multisteps-form__input form-control" type="text" value="{{$userBankAccount->account_number}}" />
+                                <input name="account_number" class="multisteps-form__input form-control" type="text" placeholder="..." />
                             </div>
                         </div>
 
@@ -88,7 +87,7 @@
 
                         <div class="d-flex justify-content-end mt-4">
                             <a type="button"  href="{{ route('admin.user-bank-account.index') }}" class="btn btn-light m-0">Cancel</a>
-                            <button type="submit" name="button" class="btn bg-gradient-info m-0 ms-2">Update User Bank Account</button>
+                            <button type="submit" name="button" class="btn bg-gradient-info m-0 ms-2">Create User Bank Account</button>
                         </div>
                     </form>
                 </div>
@@ -99,3 +98,4 @@
 
 @push('js')
 @endpush
+

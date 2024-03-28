@@ -268,7 +268,7 @@
                     @if(Auth::user()->can('view System Configuration'))
                         <ul class="nav ms-4">
                             <li class="nav-item ">
-                                <a class="nav-link {{request()->is('*/transfer-request', '*/transfer-request/*') ? 'active' : ''}}" href="{{route('admin.system-configuration.index')}}">
+                                <a class="nav-link {{request()->is('*/transfer-request', '*/transfer-request/*') ? 'active' : ''}}" href="{{route('admin.transfer-request.index')}}">
                                     <span class="sidenav-mini-icon"> TR </span>
                                     <span class="sidenav-normal"> Transfer Requests </span>
                                 </a>

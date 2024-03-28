@@ -1280,7 +1280,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </collation>
     <schema id="288" parent="1" name="blog">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-03-04.20:29:25</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-03-28.11:47:20</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="information_schema">
@@ -1502,7 +1502,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
     <column id="347" parent="313" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1657,7 +1657,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="379" parent="316" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1716,7 +1716,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>attributes_slug_unique</UnderlyingIndexName>
     </key>
     <column id="392" parent="317" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1812,7 +1812,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="412" parent="319" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1861,7 +1861,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="422" parent="320" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1976,7 +1976,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="445" parent="323" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2069,7 +2069,7 @@ addressable_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="464" parent="325" name="id">
-      <AutoIncrement>49</AutoIncrement>
+      <AutoIncrement>48</AutoIncrement>
       <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2393,7 +2393,7 @@ model_type</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="531" parent="333" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2497,7 +2497,7 @@ guard_name</ColNames>
       <UnderlyingIndexName>permissions_name_guard_name_unique</UnderlyingIndexName>
     </key>
     <column id="553" parent="336" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2544,7 +2544,7 @@ guard_name</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="563" parent="337" name="id">
-      <AutoIncrement>8</AutoIncrement>
+      <AutoIncrement>7</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2700,7 +2700,7 @@ guard_name</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="595" parent="338" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2919,7 +2919,7 @@ guard_name</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="640" parent="343" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DasType>bigint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
